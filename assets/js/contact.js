@@ -8,9 +8,9 @@
  * ============================================================ */
 
 /* ---------- CONFIGURE YOUR CREDENTIALS HERE ---------- */
-const SUPABASE_URL      = 'YOUR_SUPABASE_URL';       // e.g. https://xxxx.supabase.co
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';  // "anon / public" key – safe to expose
-const TURNSTILE_SITE_KEY = 'YOUR_TURNSTILE_SITE_KEY';
+const SUPABASE_URL      = 'https://yzydjjfxqdcjwljduqnx.supabase.co';       // e.g. https://xxxx.supabase.co
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl6eWRqamZ4cWRjandsamR1cW54Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA1MDM5MTksImV4cCI6MjA5NjA3OTkxOX0.kbEGpQUScVLpZYjQXtLRRvI45iLSTXnYImn_LxqHQUw';  // "anon / public" key – safe to expose
+const TURNSTILE_SITE_KEY = '0x4AAAAAADeVes3P7mz-7Ql3';
 /* ----------------------------------------------------- */
 
 const IS_CONFIGURED =
@@ -154,7 +154,12 @@ async function handleContactSubmit(e) {
     });
 
     const result = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(result.error || 'Failed to submit form');
+    if (!response.ok) {
+      if (response.status === 404) {
+        throw new Error('Edge Function not found. Deploy supabase/functions/contact before submitting the form.');
+      }
+      throw new Error(result.error || 'Failed to submit form');
+    }
 
     if (_turnstileWidgetId !== null && window.turnstile) {
       window.turnstile.reset(_turnstileWidgetId);
@@ -178,7 +183,7 @@ async function handleContactSubmit(e) {
     swalDark({
       icon: 'error',
       title: t('alert_error_title'),
-      text:  t('alert_error_text'),
+      text: err?.message || t('alert_error_text'),
     });
 
   } finally {
