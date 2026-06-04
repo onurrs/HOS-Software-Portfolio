@@ -46,12 +46,13 @@ const translations = {
     about_edu_3_school: 'Nevşehir Cemil Meriç',
     about_edu_3_degree: 'Social Sciences High School',
     about_edu_3_year:   '2015 – 2020',
-    about_stat_1_value: '3+',
+    about_stat_1_value: '5+',
     about_stat_1_label: 'Years Coding',
     about_stat_2_value: '20+',
     about_stat_2_label: 'Projects',
     about_stat_3_value: '10+',
     about_stat_3_label: 'Technologies',
+    about_social:       'Find Me Online',
 
     /* Skills */
     skills_title:        'My Skills',
@@ -153,12 +154,13 @@ const translations = {
     about_edu_3_school: 'Nevşehir Cemil Meriç',
     about_edu_3_degree: 'Sosyal Bilimler Lisesi',
     about_edu_3_year:   '2015 – 2020',
-    about_stat_1_value: '3+',
+    about_stat_1_value: '5+',
     about_stat_1_label: 'Yıllık Kodlama',
     about_stat_2_value: '20+',
     about_stat_2_label: 'Proje',
     about_stat_3_value: '10+',
     about_stat_3_label: 'Teknoloji',
+    about_social:       'Bana Ulaşın',
 
     /* Skills */
     skills_title:        'Becerilerim',
