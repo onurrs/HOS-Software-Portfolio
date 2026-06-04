@@ -89,9 +89,4 @@ assets/
 		app.js
 		contact.js
 		translations.js
-supabase/
-	functions/
-		contact/
-			index.ts
-			config.toml
 ```
