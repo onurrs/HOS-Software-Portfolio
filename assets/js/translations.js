@@ -93,7 +93,7 @@ const translations = {
     contact_location_label: 'Location',
     contact_location_value: 'Kayseri, Turkiye',  // ← Replace
     contact_availability:   'Open to Opportunities',
-    contact_form_name:      'H. Onur Söğüt',          // ← Replace with your name
+    contact_form_name:      'Your Name',
     contact_form_email:     'Your Email',
     contact_form_subject:   'Subject',
     contact_form_message:   'Your Message',

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Fullstack Developer &amp; AI Engineer — Personal Portfolio" />
-  <meta property="og:title"       content="Portfolio | Fullstack &amp; AI Engineer" />
+  <meta property="og:title" content="Portfolio | Fullstack &amp; AI Engineer" />
   <meta property="og:description" content="Building modern web apps and intelligent AI systems." />
-  <meta property="og:type"        content="website" />
+  <meta property="og:type" content="website" />
   <title>Portfolio | Fullstack &amp; AI Engineer</title>
   <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
   <link rel="shortcut icon" href="assets/img/logo.svg" />
@@ -14,7 +15,9 @@
   <!-- ===== Fonts ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
 
   <!-- ===== Font Awesome 6 ===== -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -33,10 +36,10 @@
       theme: {
         extend: {
           colors: {
-            primary:        '#7c3aed',
-            'primary-light':'#9d5ffa',
-            secondary:      '#06b6d4',
-            'dark-bg':      '#030712',
+            primary: '#7c3aed',
+            'primary-light': '#9d5ffa',
+            secondary: '#06b6d4',
+            'dark-bg': '#030712',
             'dark-surface': '#0f0a1e',
           },
           fontFamily: {
@@ -54,737 +57,741 @@
 
 <body class="font-sans text-gray-100 overflow-x-hidden">
 
-<!-- ================================================================
+  <!-- ================================================================
      NAVBAR
 ================================================================ -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 lg:h-20">
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
 
-      <!-- Logo -->
-      <a href="#home" class="flex items-center gap-2 group">
-        <img src="assets/img/logo-white.svg" alt="" aria-hidden="true" class="w-9 h-9 object-contain group-hover:scale-110 transition-transform duration-200" />
-        <span class="font-semibold text-white" data-i18n="hero_name">Your Name</span>
-      </a>
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2 group">
+          <img src="assets/img/logo-white.svg" alt="" aria-hidden="true"
+            class="w-9 h-9 object-contain group-hover:scale-110 transition-transform duration-200" />
+          <span class="font-semibold text-white" data-i18n="hero_name">Your Name</span>
+        </a>
 
-      <!-- Desktop nav links -->
-      <div class="hidden md:flex items-center gap-1">
-        <a href="#home"     class="nav-link" data-i18n="nav_home">Home</a>
-        <a href="#about"    class="nav-link" data-i18n="nav_about">About</a>
-        <a href="#skills"   class="nav-link" data-i18n="nav_skills">Skills</a>
-        <a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a>
-        <a href="#contact"  class="nav-link" data-i18n="nav_contact">Contact</a>
+        <!-- Desktop nav links -->
+        <div class="hidden md:flex items-center gap-1">
+          <a href="#home" class="nav-link" data-i18n="nav_home">Home</a>
+          <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+          <a href="#skills" class="nav-link" data-i18n="nav_skills">Skills</a>
+          <a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a>
+          <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+        </div>
+
+        <!-- Right controls -->
+        <div class="flex items-center gap-3">
+          <!-- Language toggle -->
+          <button id="lang-toggle"
+            class="lang-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 text-sm font-medium text-gray-400 hover:border-primary/50 hover:text-primary transition-all duration-200"
+            aria-label="Toggle language">
+            <i class="fa-solid fa-globe text-xs"></i>
+            <span id="lang-label">TR</span>
+          </button>
+
+          <!-- Hamburger (mobile) -->
+          <button id="mobile-menu-btn" class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-[5px] rounded-lg hover:bg-white/5 transition-colors" aria-label="Toggle menu" aria-expanded="false">
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-4 pb-4 pt-2 space-y-1 bg-dark-surface/95 backdrop-blur-xl border-t border-white/5">
+        <a href="#home" class="mobile-nav-link" data-i18n="nav_home">Home</a>
+        <a href="#about" class="mobile-nav-link" data-i18n="nav_about">About</a>
+        <a href="#skills" class="mobile-nav-link" data-i18n="nav_skills">Skills</a>
+        <a href="#projects" class="mobile-nav-link" data-i18n="nav_projects">Projects</a>
+        <a href="#contact" class="mobile-nav-link" data-i18n="nav_contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <section id="home" class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
+
+    <!-- Animated background blobs -->
+    <div class="blob blob-purple" aria-hidden="true"></div>
+    <div class="blob blob-cyan" aria-hidden="true"></div>
+    <div class="grid-pattern" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
+
+      <!-- Availability badge -->
+      <div
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8 animate-fade-in">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+        </span>
+        <span data-i18n="hero_availability">Available for opportunities</span>
       </div>
 
-      <!-- Right controls -->
-      <div class="flex items-center gap-3">
-        <!-- Language toggle -->
-        <button id="lang-toggle"
-          class="lang-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 text-sm font-medium text-gray-400 hover:border-primary/50 hover:text-primary transition-all duration-200"
-          aria-label="Toggle language">
-          <i class="fa-solid fa-globe text-xs"></i>
-          <span id="lang-label">TR</span>
-        </button>
+      <!-- Greeting + Name -->
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-5">
+        <span class="block text-gray-400 font-light text-xl sm:text-2xl lg:text-3xl mb-3 tracking-wide"
+          data-i18n="hero_greeting">Hello, I'm</span>
+        <span class="hero-name-gradient" data-i18n="hero_name">Your Name</span>
+      </h1>
 
-        <!-- Hamburger (mobile) -->
-        <button id="mobile-menu-btn"
-          class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-[5px] rounded-lg hover:bg-white/5 transition-colors"
-          aria-label="Toggle menu"
-          aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line short"></span>
-        </button>
+      <!-- Typed subtitle -->
+      <div class="flex items-center justify-center h-10 mb-6">
+        <span class="text-lg sm:text-2xl lg:text-3xl text-secondary font-mono font-medium">
+          <span id="typed-text"></span>
+        </span>
+      </div>
+
+      <!-- Description -->
+      <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-10"
+        data-i18n="hero_description">
+        I craft exceptional digital experiences and build intelligent systems that make a real difference.
+      </p>
+
+      <!-- CTA buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+        <a href="#projects"
+          class="btn-primary px-8 py-3.5 rounded-xl font-semibold text-sm sm:text-base w-full sm:w-auto">
+          <i class="fa-solid fa-eye"></i>
+          <span data-i18n="hero_cta_work">View My Work</span>
+        </a>
+        <a href="#contact"
+          class="btn-outline px-8 py-3.5 rounded-xl font-semibold text-sm sm:text-base w-full sm:w-auto">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span data-i18n="hero_cta_contact">Let's Talk</span>
+        </a>
+      </div>
+
+      <!-- Tech stack badges -->
+      <div class="flex flex-wrap gap-2.5 justify-center">
+        <span class="tech-badge">React</span>
+        <span class="tech-badge">Next.js</span>
+        <span class="tech-badge">Node.js</span>
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">TensorFlow</span>
+        <span class="tech-badge">PostgreSQL</span>
+        <span class="tech-badge">Docker</span>
       </div>
     </div>
-  </div>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden hidden">
-    <div class="px-4 pb-4 pt-2 space-y-1 bg-dark-surface/95 backdrop-blur-xl border-t border-white/5">
-      <a href="#home"     class="mobile-nav-link" data-i18n="nav_home">Home</a>
-      <a href="#about"    class="mobile-nav-link" data-i18n="nav_about">About</a>
-      <a href="#skills"   class="mobile-nav-link" data-i18n="nav_skills">Skills</a>
-      <a href="#projects" class="mobile-nav-link" data-i18n="nav_projects">Projects</a>
-      <a href="#contact"  class="mobile-nav-link" data-i18n="nav_contact">Contact</a>
-    </div>
-  </div>
-</nav>
-<section id="home" class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
-
-  <!-- Animated background blobs -->
-  <div class="blob blob-purple" aria-hidden="true"></div>
-  <div class="blob blob-cyan"   aria-hidden="true"></div>
-  <div class="grid-pattern"     aria-hidden="true"></div>
-
-  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
-
-    <!-- Availability badge -->
-    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8 animate-fade-in">
-      <span class="relative flex h-2 w-2">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-      </span>
-      <span data-i18n="hero_availability">Available for opportunities</span>
-    </div>
-
-    <!-- Greeting + Name -->
-    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-5">
-      <span class="block text-gray-400 font-light text-xl sm:text-2xl lg:text-3xl mb-3 tracking-wide"
-            data-i18n="hero_greeting">Hello, I'm</span>
-      <span class="hero-name-gradient" data-i18n="hero_name">Your Name</span>
-    </h1>
-
-    <!-- Typed subtitle -->
-    <div class="flex items-center justify-center h-10 mb-6">
-      <span class="text-lg sm:text-2xl lg:text-3xl text-secondary font-mono font-medium">
-        <span id="typed-text"></span>
-      </span>
-    </div>
-
-    <!-- Description -->
-    <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-10"
-       data-i18n="hero_description">
-      I craft exceptional digital experiences and build intelligent systems that make a real difference.
-    </p>
-
-    <!-- CTA buttons -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
-      <a href="#projects"
-         class="btn-primary px-8 py-3.5 rounded-xl font-semibold text-sm sm:text-base w-full sm:w-auto">
-        <i class="fa-solid fa-eye"></i>
-        <span data-i18n="hero_cta_work">View My Work</span>
-      </a>
-      <a href="#contact"
-         class="btn-outline px-8 py-3.5 rounded-xl font-semibold text-sm sm:text-base w-full sm:w-auto">
-        <i class="fa-solid fa-paper-plane"></i>
-        <span data-i18n="hero_cta_contact">Let's Talk</span>
-      </a>
-    </div>
-
-    <!-- Tech stack badges -->
-    <div class="flex flex-wrap gap-2.5 justify-center">
-      <span class="tech-badge">React</span>
-      <span class="tech-badge">Next.js</span>
-      <span class="tech-badge">Node.js</span>
-      <span class="tech-badge">Python</span>
-      <span class="tech-badge">TensorFlow</span>
-      <span class="tech-badge">PostgreSQL</span>
-      <span class="tech-badge">Docker</span>
-    </div>
-  </div>
-
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 animate-bounce"
-       aria-hidden="true">
-    <span class="text-[10px] uppercase tracking-widest" data-i18n="hero_scroll">Scroll Down</span>
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20" aria-hidden="true">
+  
+  <div class="flex flex-col items-center gap-2 text-gray-600 animate-bounce">
+    <span class="text-[10px] uppercase tracking-widest pl-[0.1em]" data-i18n="hero_scroll">Scroll Down</span>
     <i class="fa-solid fa-chevron-down text-xs"></i>
   </div>
-</section>
+
+</div>
+  </section>
 
 
-<!-- ================================================================
+  <!-- ================================================================
      ABOUT
 ================================================================ -->
-<section id="about" class="py-24 lg:py-32 relative">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="about" class="py-24 lg:py-32 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Section header -->
-    <div class="text-center mb-16" data-aos="fade-up">
-      <p class="section-tag" data-i18n="about_subtitle">Get to know me better</p>
-      <h2 class="section-title" data-i18n="about_title">About Me</h2>
-      <div class="section-divider"></div>
-    </div>
+      <!-- Section header -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <p class="section-tag" data-i18n="about_subtitle">Get to know me better</p>
+        <h2 class="section-title" data-i18n="about_title">About Me</h2>
+        <div class="section-divider"></div>
+      </div>
 
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-      <!-- Left: Avatar + Bio + Stats -->
-      <div data-aos="fade-right">
+        <!-- Left: Avatar + Bio + Stats -->
+        <div data-aos="fade-right">
 
-        <!-- Avatar -->
-        <div class="flex justify-center lg:justify-start mb-8">
-          <div class="avatar-container">
-            <div class="avatar-ring"></div>
-            <div class="avatar-inner">
-              <!-- Replace the icon below with your actual photo:
+          <!-- Avatar -->
+          <div class="flex justify-center lg:justify-start mb-8">
+            <div class="avatar-container">
+              <div class="avatar-ring"></div>
+              <div class="avatar-inner">
+                <!-- Replace the icon below with your actual photo:
                    <img src="assets/images/photo.jpg" alt="Your Name"
                         class="w-full h-full object-cover rounded-full" />
               -->
-              <i class="fa-solid fa-code text-4xl text-primary"></i>
+                <i class="fa-solid fa-code text-4xl text-primary"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <p class="text-gray-300 leading-relaxed mb-4" data-i18n="about_bio_1">
+            I'm a passionate Fullstack Developer and AI Engineer currently studying Computer Engineering.
+            I love building innovative web applications and exploring the frontiers of artificial intelligence.
+          </p>
+          <p class="text-gray-400 leading-relaxed mb-10" data-i18n="about_bio_2">
+            My journey in software development started during my university years, where I discovered my passion
+            for creating solutions that solve real-world problems. I'm always eager to learn new technologies
+            and tackle challenging projects.
+          </p>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-3 sm:gap-4">
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="0">
+              <span class="stat-value" data-i18n="about_stat_1_value">3+</span>
+              <span class="stat-label" data-i18n="about_stat_1_label">Years Coding</span>
+            </div>
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+              <span class="stat-value" data-i18n="about_stat_2_value">20+</span>
+              <span class="stat-label" data-i18n="about_stat_2_label">Projects</span>
+            </div>
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+              <span class="stat-value" data-i18n="about_stat_3_value">10+</span>
+              <span class="stat-label" data-i18n="about_stat_3_label">Technologies</span>
             </div>
           </div>
         </div>
 
-        <!-- Bio -->
-        <p class="text-gray-300 leading-relaxed mb-4" data-i18n="about_bio_1">
-          I'm a passionate Fullstack Developer and AI Engineer currently studying Computer Engineering.
-          I love building innovative web applications and exploring the frontiers of artificial intelligence.
-        </p>
-        <p class="text-gray-400 leading-relaxed mb-10" data-i18n="about_bio_2">
-          My journey in software development started during my university years, where I discovered my passion
-          for creating solutions that solve real-world problems. I'm always eager to learn new technologies
-          and tackle challenging projects.
-        </p>
+        <!-- Right: Education + Social -->
+        <div data-aos="fade-left">
 
-        <!-- Stats -->
-        <div class="grid grid-cols-3 gap-3 sm:gap-4">
-          <div class="stat-card" data-aos="zoom-in" data-aos-delay="0">
-            <span class="stat-value" data-i18n="about_stat_1_value">3+</span>
-            <span class="stat-label" data-i18n="about_stat_1_label">Years Coding</span>
-          </div>
-          <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
-            <span class="stat-value" data-i18n="about_stat_2_value">20+</span>
-            <span class="stat-label" data-i18n="about_stat_2_label">Projects</span>
-          </div>
-          <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
-            <span class="stat-value" data-i18n="about_stat_3_value">10+</span>
-            <span class="stat-label" data-i18n="about_stat_3_label">Technologies</span>
-          </div>
-        </div>
-      </div>
+          <!-- Education heading -->
+          <h3 class="flex items-center gap-2.5 text-base font-semibold text-white mb-8">
+            <span class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-graduation-cap text-primary text-sm"></i>
+            </span>
+            <span data-i18n="about_edu_title">Education</span>
+          </h3>
 
-      <!-- Right: Education + Social -->
-      <div data-aos="fade-left">
+          <!-- Timeline -->
+          <div class="timeline">
 
-        <!-- Education heading -->
-        <h3 class="flex items-center gap-2.5 text-base font-semibold text-white mb-8">
-          <span class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
-            <i class="fa-solid fa-graduation-cap text-primary text-sm"></i>
-          </span>
-          <span data-i18n="about_edu_title">Education</span>
-        </h3>
-
-        <!-- Timeline -->
-        <div class="timeline">
-
-          <!-- Entry 1 (MSc) -->
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content glass-card p-5 rounded-xl">
-              <div class="flex items-start justify-between gap-3 mb-2 flex-wrap">
-                <h4 class="font-semibold text-white" data-i18n="about_edu_1_degree">Dept. of AI and Data Science (M.Sc.)</h4>
-                <span class="edu-year-badge" data-i18n="about_edu_1_year">2024 – Present</span>
+            <!-- Entry 1 (MSc) -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content glass-card p-5 rounded-xl">
+                <div class="flex items-start justify-between gap-3 mb-2 flex-wrap">
+                  <h4 class="font-semibold text-white" data-i18n="about_edu_1_degree">Dept. of AI and Data Science
+                    (M.Sc.)</h4>
+                  <span class="edu-year-badge" data-i18n="about_edu_1_year">2024 – Present</span>
+                </div>
+                <p class="text-gray-400 text-sm flex items-center gap-1.5">
+                  <i class="fa-solid fa-building-columns text-xs text-secondary"></i>
+                  <span data-i18n="about_edu_1_school">Sivas Cumhuriyet University</span>
+                </p>
               </div>
-              <p class="text-gray-400 text-sm flex items-center gap-1.5">
-                <i class="fa-solid fa-building-columns text-xs text-secondary"></i>
-                <span data-i18n="about_edu_1_school">Sivas Cumhuriyet University</span>
-              </p>
+            </div>
+
+            <!-- Entry 2 (BSc) -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content glass-card p-5 rounded-xl">
+                <div class="flex items-start justify-between gap-3 mb-2 flex-wrap">
+                  <h4 class="font-semibold text-white" data-i18n="about_edu_2_degree">Computer Engineering (B.Sc.)</h4>
+                  <span class="edu-year-badge" data-i18n="about_edu_2_year">2020 – 2024</span>
+                </div>
+                <p class="text-gray-400 text-sm flex items-center gap-1.5">
+                  <i class="fa-solid fa-building-columns text-xs text-secondary"></i>
+                  <span data-i18n="about_edu_2_school">Sivas Cumhuriyet University</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Entry 3 (High School) -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content glass-card p-5 rounded-xl">
+                <div class="flex items-start justify-between gap-3 mb-2 flex-wrap">
+                  <h4 class="font-semibold text-white" data-i18n="about_edu_3_degree">Social Sciences High School</h4>
+                  <span class="edu-year-badge" data-i18n="about_edu_3_year">2015 – 2020</span>
+                </div>
+                <p class="text-gray-400 text-sm flex items-center gap-1.5">
+                  <i class="fa-solid fa-school text-xs text-secondary"></i>
+                  <span data-i18n="about_edu_3_school">Nevşehir Cemil Meriç</span>
+                </p>
+              </div>
             </div>
           </div>
 
-          <!-- Entry 2 (BSc) -->
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content glass-card p-5 rounded-xl">
-              <div class="flex items-start justify-between gap-3 mb-2 flex-wrap">
-                <h4 class="font-semibold text-white" data-i18n="about_edu_2_degree">Computer Engineering (B.Sc.)</h4>
-                <span class="edu-year-badge" data-i18n="about_edu_2_year">2020 – 2024</span>
-              </div>
-              <p class="text-gray-400 text-sm flex items-center gap-1.5">
-                <i class="fa-solid fa-building-columns text-xs text-secondary"></i>
-                <span data-i18n="about_edu_2_school">Sivas Cumhuriyet University</span>
-              </p>
+          <!-- Social links -->
+          <div class="mt-10">
+            <p class="text-xs font-medium text-gray-500 uppercase tracking-widest mb-4">Find Me Online</p>
+            <div class="flex gap-3 flex-wrap">
+              <!-- Replace href="#" with your actual profile URLs -->
+              <a href="https://github.com/onurrs" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+                aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/hacisogut" target="_blank" rel="noopener noreferrer"
+                class="social-icon-btn" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="mailto:info@onursogut.tech" class="social-icon-btn" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
             </div>
-          </div>
-
-          <!-- Entry 3 (High School) -->
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content glass-card p-5 rounded-xl">
-              <div class="flex items-start justify-between gap-3 mb-2 flex-wrap">
-                <h4 class="font-semibold text-white" data-i18n="about_edu_3_degree">Social Sciences High School</h4>
-                <span class="edu-year-badge" data-i18n="about_edu_3_year">2015 – 2020</span>
-              </div>
-              <p class="text-gray-400 text-sm flex items-center gap-1.5">
-                <i class="fa-solid fa-school text-xs text-secondary"></i>
-                <span data-i18n="about_edu_3_school">Nevşehir Cemil Meriç</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Social links -->
-        <div class="mt-10">
-          <p class="text-xs font-medium text-gray-500 uppercase tracking-widest mb-4">Find Me Online</p>
-          <div class="flex gap-3 flex-wrap">
-            <!-- Replace href="#" with your actual profile URLs -->
-            <a href="https://github.com/onurrs" target="_blank" rel="noopener noreferrer"
-               class="social-icon-btn" aria-label="GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/hacisogut" target="_blank" rel="noopener noreferrer"
-               class="social-icon-btn" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="mailto:info@onursogut.tech"
-               class="social-icon-btn" aria-label="Email">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ================================================================
+  <!-- ================================================================
      SKILLS
 ================================================================ -->
-<section id="skills" class="py-24 lg:py-32 bg-dark-surface/40 relative">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="skills" class="py-24 lg:py-32 bg-dark-surface/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Section header -->
-    <div class="text-center mb-16" data-aos="fade-up">
-      <p class="section-tag" data-i18n="skills_subtitle">Technologies I work with</p>
-      <h2 class="section-title" data-i18n="skills_title">My Skills</h2>
-      <div class="section-divider"></div>
+      <!-- Section header -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <p class="section-tag" data-i18n="skills_subtitle">Technologies I work with</p>
+        <h2 class="section-title" data-i18n="skills_title">My Skills</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Frontend -->
+        <div class="skill-category-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon bg-blue-500/20">
+              <i class="fa-solid fa-desktop text-blue-400"></i>
+            </div>
+            <h3 class="font-semibold text-white" data-i18n="skills_cat_frontend">Frontend</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">HTML5 / CSS3</span>
+            <span class="skill-tag">Vue.js</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-category-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon bg-green-500/20">
+              <i class="fa-solid fa-server text-green-400"></i>
+            </div>
+            <h3 class="font-semibold text-white" data-i18n="skills_cat_backend">Backend</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Redis</span>
+          </div>
+        </div>
+
+        <!-- AI & ML -->
+        <div class="skill-category-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon bg-purple-500/20">
+              <i class="fa-solid fa-brain text-purple-400"></i>
+            </div>
+            <h3 class="font-semibold text-white" data-i18n="skills_cat_ai">AI &amp; ML</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">OpenCV</span>
+            <span class="skill-tag">LangChain</span>
+            <span class="skill-tag">HuggingFace</span>
+          </div>
+        </div>
+
+        <!-- DevOps & Tools -->
+        <div class="skill-category-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon bg-orange-500/20">
+              <i class="fa-brands fa-docker text-orange-400"></i>
+            </div>
+            <h3 class="font-semibold text-white" data-i18n="skills_cat_devops">DevOps &amp; Tools</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">Nginx</span>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-      <!-- Frontend -->
-      <div class="skill-category-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon bg-blue-500/20">
-            <i class="fa-solid fa-desktop text-blue-400"></i>
-          </div>
-          <h3 class="font-semibold text-white" data-i18n="skills_cat_frontend">Frontend</h3>
-        </div>
-        <div class="flex flex-wrap gap-2 mt-5">
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">Tailwind CSS</span>
-          <span class="skill-tag">HTML5 / CSS3</span>
-          <span class="skill-tag">Vue.js</span>
-        </div>
-      </div>
-
-      <!-- Backend -->
-      <div class="skill-category-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon bg-green-500/20">
-            <i class="fa-solid fa-server text-green-400"></i>
-          </div>
-          <h3 class="font-semibold text-white" data-i18n="skills_cat_backend">Backend</h3>
-        </div>
-        <div class="flex flex-wrap gap-2 mt-5">
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">FastAPI</span>
-          <span class="skill-tag">Express.js</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">Redis</span>
-        </div>
-      </div>
-
-      <!-- AI & ML -->
-      <div class="skill-category-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon bg-purple-500/20">
-            <i class="fa-solid fa-brain text-purple-400"></i>
-          </div>
-          <h3 class="font-semibold text-white" data-i18n="skills_cat_ai">AI &amp; ML</h3>
-        </div>
-        <div class="flex flex-wrap gap-2 mt-5">
-          <span class="skill-tag">TensorFlow</span>
-          <span class="skill-tag">PyTorch</span>
-          <span class="skill-tag">Scikit-learn</span>
-          <span class="skill-tag">OpenCV</span>
-          <span class="skill-tag">LangChain</span>
-          <span class="skill-tag">HuggingFace</span>
-        </div>
-      </div>
-
-      <!-- DevOps & Tools -->
-      <div class="skill-category-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon bg-orange-500/20">
-            <i class="fa-brands fa-docker text-orange-400"></i>
-          </div>
-          <h3 class="font-semibold text-white" data-i18n="skills_cat_devops">DevOps &amp; Tools</h3>
-        </div>
-        <div class="flex flex-wrap gap-2 mt-5">
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Git / GitHub</span>
-          <span class="skill-tag">AWS</span>
-          <span class="skill-tag">Linux</span>
-          <span class="skill-tag">CI/CD</span>
-          <span class="skill-tag">Nginx</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ================================================================
+  <!-- ================================================================
      PROJECTS
 ================================================================ -->
-<section id="projects" class="py-24 lg:py-32 relative">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="projects" class="py-24 lg:py-32 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Section header -->
-    <div class="text-center mb-16" data-aos="fade-up">
-      <p class="section-tag" data-i18n="projects_subtitle">Things I've built</p>
-      <h2 class="section-title" data-i18n="projects_title">My Projects</h2>
-      <div class="section-divider"></div>
-    </div>
+      <!-- Section header -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <p class="section-tag" data-i18n="projects_subtitle">Things I've built</p>
+        <h2 class="section-title" data-i18n="projects_title">My Projects</h2>
+        <div class="section-divider"></div>
+      </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- ─── Project 1 ─── -->
-      <article class="project-card" data-aos="fade-up" data-aos-delay="0">
-        <!-- Browser mockup -->
-        <div class="project-mockup-header bg-gradient-to-br from-violet-600 via-indigo-600 to-blue-600">
-          <div class="browser-dots">
-            <span class="dot dot-red"></span>
-            <span class="dot dot-yellow"></span>
-            <span class="dot dot-green"></span>
-          </div>
-          <div class="browser-url-bar">cappadociashuttleservice.com</div>
-          <div class="browser-content">
-            <div class="mock-line w-3/4"></div>
-            <div class="mock-line w-1/2 mt-2.5"></div>
-            <div class="mock-grid mt-3">
-              <div class="mock-card"></div>
-              <div class="mock-card"></div>
-              <div class="mock-card"></div>
+        <!-- ─── Project 1 ─── -->
+        <article class="project-card" data-aos="fade-up" data-aos-delay="0">
+          <!-- Browser mockup -->
+          <div class="project-mockup-header bg-gradient-to-br from-violet-600 via-indigo-600 to-blue-600">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
             </div>
-          </div>
-        </div>
-
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between mb-2.5">
-            <h3 class="text-base font-bold text-white" data-i18n="project_1_title">Project 1</h3>
-            <span class="project-number">#01</span>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-1" data-i18n="project_1_desc">
-            A full-stack e-commerce platform with real-time inventory management, payment integration, and a powerful admin dashboard.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tag-pill" data-i18n="project_1_tag_1">Shuttle Booking</span>
-            <span class="tag-pill" data-i18n="project_1_tag_2">Route Planning</span>
-            <span class="tag-pill" data-i18n="project_1_tag_3">Dynamic Pricing</span>
-            <span class="tag-pill" data-i18n="project_1_tag_4">Operations Management</span>
-          </div>
-          <div class="flex gap-3">
-            <!-- Replace href="#" with the actual live demo URL -->
-            <a href="https://cappadociashuttleservice.com" target="_blank" rel="noopener noreferrer" class="project-demo-btn w-full">
-              <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-              <span data-i18n="project_demo">Live Demo</span>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ─── Project 2 ─── -->
-      <article class="project-card" data-aos="fade-up" data-aos-delay="120">
-        <div class="project-mockup-header bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600">
-          <div class="browser-dots">
-            <span class="dot dot-red"></span>
-            <span class="dot dot-yellow"></span>
-            <span class="dot dot-green"></span>
-          </div>
-          <div class="browser-url-bar">capahenastravel.com</div>
-          <div class="browser-content">
-            <div class="mock-line w-2/3"></div>
-            <div class="mock-line w-2/5 mt-2.5"></div>
-            <div class="mock-chart mt-3"></div>
-          </div>
-        </div>
-
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between mb-2.5">
-            <h3 class="text-base font-bold text-white" data-i18n="project_2_title">Project 2</h3>
-            <span class="project-number">#02</span>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-1" data-i18n="project_2_desc">
-            An AI-powered medical image classification system that assists doctors in diagnosing conditions with high accuracy using deep learning.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tag-pill" data-i18n="project_2_tag_1">i18n Localization</span>
-            <span class="tag-pill" data-i18n="project_2_tag_2">Tour Catalog</span>
-            <span class="tag-pill" data-i18n="project_2_tag_3">Booking Flow</span>
-            <span class="tag-pill" data-i18n="project_2_tag_4">Full-Stack App</span>
-          </div>
-          <div class="flex gap-3">
-            <a href="https://capahenastravel.com" target="_blank" rel="noopener noreferrer" class="project-demo-btn w-full">
-              <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-              <span data-i18n="project_demo">Live Demo</span>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ─── Project 3 ─── -->
-      <article class="project-card" data-aos="fade-up" data-aos-delay="240">
-        <div class="project-mockup-header bg-gradient-to-br from-orange-500 via-rose-500 to-pink-600">
-          <div class="browser-dots">
-            <span class="dot dot-red"></span>
-            <span class="dot dot-yellow"></span>
-            <span class="dot dot-green"></span>
-          </div>
-          <div class="browser-url-bar">njbldesign.com</div>
-          <div class="browser-content">
-            <div class="mock-kanban mt-1">
-              <div class="mock-kanban-col">
-                <div class="mock-kanban-item"></div>
-                <div class="mock-kanban-item mt-1.5"></div>
-              </div>
-              <div class="mock-kanban-col">
-                <div class="mock-kanban-item"></div>
-              </div>
-              <div class="mock-kanban-col">
-                <div class="mock-kanban-item"></div>
-                <div class="mock-kanban-item mt-1.5"></div>
+            <div class="browser-url-bar">cappadociashuttleservice.com</div>
+            <div class="browser-content">
+              <div class="mock-line w-3/4"></div>
+              <div class="mock-line w-1/2 mt-2.5"></div>
+              <div class="mock-grid mt-3">
+                <div class="mock-card"></div>
+                <div class="mock-card"></div>
+                <div class="mock-card"></div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between mb-2.5">
-            <h3 class="text-base font-bold text-white" data-i18n="project_3_title">Project 3</h3>
-            <span class="project-number">#03</span>
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex items-start justify-between mb-2.5">
+              <h3 class="text-base font-bold text-white" data-i18n="project_1_title">Project 1</h3>
+              <span class="project-number">#01</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-1" data-i18n="project_1_desc">
+              A full-stack e-commerce platform with real-time inventory management, payment integration, and a powerful
+              admin dashboard.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="tag-pill" data-i18n="project_1_tag_1">Shuttle Booking</span>
+              <span class="tag-pill" data-i18n="project_1_tag_2">Route Planning</span>
+              <span class="tag-pill" data-i18n="project_1_tag_3">Dynamic Pricing</span>
+              <span class="tag-pill" data-i18n="project_1_tag_4">Operations Management</span>
+            </div>
+            <div class="flex gap-3">
+              <!-- Replace href="#" with the actual live demo URL -->
+              <a href="https://cappadociashuttleservice.com" target="_blank" rel="noopener noreferrer"
+                class="project-demo-btn w-full">
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                <span data-i18n="project_demo">Live Demo</span>
+              </a>
+            </div>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-1" data-i18n="project_3_desc">
-            Real-time collaborative task management app with drag-and-drop Kanban board, team workspaces, and live presence indicators.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tag-pill" data-i18n="project_3_tag_1">Media Optimization</span>
-            <span class="tag-pill" data-i18n="project_3_tag_2">CMS</span>
-            <span class="tag-pill" data-i18n="project_3_tag_3">Modern UI</span>
-            <span class="tag-pill" data-i18n="project_3_tag_4">High Performance</span>
-          </div>
-          <div class="flex gap-3">
-            <a href="https://njbldesign.com" target="_blank" rel="noopener noreferrer" class="project-demo-btn w-full">
-              <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-              <span data-i18n="project_demo">Live Demo</span>
-            </a>
-          </div>
-        </div>
-      </article>
+        </article>
 
+        <!-- ─── Project 2 ─── -->
+        <article class="project-card" data-aos="fade-up" data-aos-delay="120">
+          <div class="project-mockup-header bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="browser-url-bar">capahenastravel.com</div>
+            <div class="browser-content">
+              <div class="mock-line w-2/3"></div>
+              <div class="mock-line w-2/5 mt-2.5"></div>
+              <div class="mock-chart mt-3"></div>
+            </div>
+          </div>
+
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex items-start justify-between mb-2.5">
+              <h3 class="text-base font-bold text-white" data-i18n="project_2_title">Project 2</h3>
+              <span class="project-number">#02</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-1" data-i18n="project_2_desc">
+              An AI-powered medical image classification system that assists doctors in diagnosing conditions with high
+              accuracy using deep learning.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="tag-pill" data-i18n="project_2_tag_1">i18n Localization</span>
+              <span class="tag-pill" data-i18n="project_2_tag_2">Tour Catalog</span>
+              <span class="tag-pill" data-i18n="project_2_tag_3">Booking Flow</span>
+              <span class="tag-pill" data-i18n="project_2_tag_4">Full-Stack App</span>
+            </div>
+            <div class="flex gap-3">
+              <a href="https://capahenastravel.com" target="_blank" rel="noopener noreferrer"
+                class="project-demo-btn w-full">
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                <span data-i18n="project_demo">Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── Project 3 ─── -->
+        <article class="project-card" data-aos="fade-up" data-aos-delay="240">
+          <div class="project-mockup-header bg-gradient-to-br from-orange-500 via-rose-500 to-pink-600">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="browser-url-bar">njbldesign.com</div>
+            <div class="browser-content">
+              <div class="mock-kanban mt-1">
+                <div class="mock-kanban-col">
+                  <div class="mock-kanban-item"></div>
+                  <div class="mock-kanban-item mt-1.5"></div>
+                </div>
+                <div class="mock-kanban-col">
+                  <div class="mock-kanban-item"></div>
+                </div>
+                <div class="mock-kanban-col">
+                  <div class="mock-kanban-item"></div>
+                  <div class="mock-kanban-item mt-1.5"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex items-start justify-between mb-2.5">
+              <h3 class="text-base font-bold text-white" data-i18n="project_3_title">Project 3</h3>
+              <span class="project-number">#03</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-1" data-i18n="project_3_desc">
+              Real-time collaborative task management app with drag-and-drop Kanban board, team workspaces, and live
+              presence indicators.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="tag-pill" data-i18n="project_3_tag_1">Media Optimization</span>
+              <span class="tag-pill" data-i18n="project_3_tag_2">CMS</span>
+              <span class="tag-pill" data-i18n="project_3_tag_3">Modern UI</span>
+              <span class="tag-pill" data-i18n="project_3_tag_4">High Performance</span>
+            </div>
+            <div class="flex gap-3">
+              <a href="https://njbldesign.com" target="_blank" rel="noopener noreferrer"
+                class="project-demo-btn w-full">
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                <span data-i18n="project_demo">Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ================================================================
+  <!-- ================================================================
      CONTACT
 ================================================================ -->
-<section id="contact" class="py-24 lg:py-32 bg-dark-surface/40 relative">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="contact" class="py-24 lg:py-32 bg-dark-surface/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Section header -->
-    <div class="text-center mb-16" data-aos="fade-up">
-      <p class="section-tag" data-i18n="contact_subtitle">Let's work together</p>
-      <h2 class="section-title" data-i18n="contact_title">Get In Touch</h2>
-      <div class="section-divider"></div>
-    </div>
-
-    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
-
-      <!-- Info column -->
-      <div class="lg:col-span-2 space-y-5" data-aos="fade-right">
-        <p class="text-gray-400 leading-relaxed" data-i18n="contact_description">
-          Whether you have a project in mind, want to collaborate, or just want to say hi — my inbox is always open.
-        </p>
-
-        <!-- Email -->
-        <div class="contact-info-card">
-          <div class="contact-info-icon">
-            <i class="fa-solid fa-envelope text-primary"></i>
-          </div>
-          <div>
-            <p class="text-xs text-gray-500 uppercase tracking-wider mb-1"
-               data-i18n="contact_email_label">Email</p>
-            <!-- Replace with your actual email -->
-            <a href="mailto:info@onursogut.tech"
-               class="text-white hover:text-primary transition-colors font-medium text-sm">
-              info@onursogut.tech
-            </a>
-          </div>
-        </div>
-
-        <!-- Location -->
-        <div class="contact-info-card">
-          <div class="contact-info-icon">
-            <i class="fa-solid fa-location-dot text-secondary"></i>
-          </div>
-          <div>
-            <p class="text-xs text-gray-500 uppercase tracking-wider mb-1"
-               data-i18n="contact_location_label">Location</p>
-            <p class="text-white font-medium text-sm" data-i18n="contact_location_value">
-              Istanbul, Turkey
-            </p>
-          </div>
-        </div>
-
-        <!-- Status -->
-        <div class="contact-info-card">
-          <div class="contact-info-icon">
-            <i class="fa-solid fa-circle-check text-green-400"></i>
-          </div>
-          <div>
-            <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Status</p>
-            <p class="text-green-400 font-medium text-sm flex items-center gap-1.5">
-              <span class="relative flex h-2 w-2 flex-shrink-0">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
-              </span>
-              <span data-i18n="contact_availability">Open to Opportunities</span>
-            </p>
-          </div>
-        </div>
+      <!-- Section header -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <p class="section-tag" data-i18n="contact_subtitle">Let's work together</p>
+        <h2 class="section-title" data-i18n="contact_title">Get In Touch</h2>
+        <div class="section-divider"></div>
       </div>
 
-      <!-- Form column -->
-      <div class="lg:col-span-3" data-aos="fade-left">
-        <form id="contact-form" class="glass-card p-6 sm:p-8 rounded-2xl space-y-5" novalidate autocomplete="off">
-          <input type="text" id="contact-company" name="company" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <input type="hidden" id="contact-started-at" name="started_at" />
+      <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
 
-          <div class="grid sm:grid-cols-2 gap-5">
-            <!-- Name -->
-            <div class="form-group">
-              <label class="form-label" for="contact-name" data-i18n="contact_form_name">
-                Your Name
-              </label>
-              <input type="text" id="contact-name" name="name"
-                     class="form-input"
-                     data-i18n-ph="contact_ph_name"
-                     placeholder="e.g. Jane Smith"
-                     autocomplete="name" required />
+        <!-- Info column -->
+        <div class="lg:col-span-2 space-y-5" data-aos="fade-right">
+          <p class="text-gray-400 leading-relaxed" data-i18n="contact_description">
+            Whether you have a project in mind, want to collaborate, or just want to say hi — my inbox is always open.
+          </p>
+
+          <!-- Email -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <i class="fa-solid fa-envelope text-primary"></i>
             </div>
-
-            <!-- Email -->
-            <div class="form-group">
-              <label class="form-label" for="contact-email" data-i18n="contact_form_email">
-                Your Email
-              </label>
-              <input type="email" id="contact-email" name="email"
-                     class="form-input"
-                     data-i18n-ph="contact_ph_email"
-                     placeholder="jane@example.com"
-                     autocomplete="email" required />
+            <div>
+              <p class="text-xs text-gray-500 uppercase tracking-wider mb-1" data-i18n="contact_email_label">Email</p>
+              <!-- Replace with your actual email -->
+              <a href="mailto:info@onursogut.tech"
+                class="text-white hover:text-primary transition-colors font-medium text-sm">
+                info@onursogut.tech
+              </a>
             </div>
           </div>
 
-          <!-- Subject -->
-          <div class="form-group">
-            <label class="form-label" for="contact-subject" data-i18n="contact_form_subject">
-              Subject
-            </label>
-            <input type="text" id="contact-subject" name="subject"
-                   class="form-input"
-                   data-i18n-ph="contact_ph_subject"
-                   placeholder="Project discussion…"
-                   required />
+          <!-- Location -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <i class="fa-solid fa-location-dot text-secondary"></i>
+            </div>
+            <div>
+              <p class="text-xs text-gray-500 uppercase tracking-wider mb-1" data-i18n="contact_location_label">Location
+              </p>
+              <p class="text-white font-medium text-sm" data-i18n="contact_location_value">
+                Istanbul, Turkey
+              </p>
+            </div>
           </div>
 
-          <!-- Message -->
-          <div class="form-group">
-            <label class="form-label" for="contact-message" data-i18n="contact_form_message">
-              Your Message
-            </label>
-            <textarea id="contact-message" name="message" rows="5"
-                      class="form-input resize-none"
-                      data-i18n-ph="contact_ph_message"
-                      placeholder="Hello! I'd like to talk about…"
-                      required></textarea>
+          <!-- Status -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <i class="fa-solid fa-circle-check text-green-400"></i>
+            </div>
+            <div>
+              <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Status</p>
+              <p class="text-green-400 font-medium text-sm flex items-center gap-1.5">
+                <span class="relative flex h-2 w-2 flex-shrink-0">
+                  <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+                </span>
+                <span data-i18n="contact_availability">Open to Opportunities</span>
+              </p>
+            </div>
           </div>
+        </div>
 
-          <!-- Submit -->
-          <button type="submit" id="submit-btn"
-                  class="btn-primary w-full py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2">
-            <i class="fa-solid fa-paper-plane"></i>
-            <span id="submit-text" data-i18n="contact_form_send">Send Message</span>
-          </button>
+        <!-- Form column -->
+        <div class="lg:col-span-3" data-aos="fade-left">
+          <form id="contact-form" class="glass-card p-6 sm:p-8 rounded-2xl space-y-5" novalidate autocomplete="off">
+            <input type="text" id="contact-company" name="company" class="sr-only" tabindex="-1" autocomplete="off"
+              aria-hidden="true" />
+            <input type="hidden" id="contact-started-at" name="started_at" />
 
-          <div id="turnstile-container" class="flex justify-center"></div>
-        </form>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <!-- Name -->
+              <div class="form-group">
+                <label class="form-label" for="contact-name" data-i18n="contact_form_name">
+                  Your Name
+                </label>
+                <input type="text" id="contact-name" name="name" class="form-input" data-i18n-ph="contact_ph_name"
+                  placeholder="e.g. Jane Smith" autocomplete="name" required />
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label class="form-label" for="contact-email" data-i18n="contact_form_email">
+                  Your Email
+                </label>
+                <input type="email" id="contact-email" name="email" class="form-input" data-i18n-ph="contact_ph_email"
+                  placeholder="jane@example.com" autocomplete="email" required />
+              </div>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-group">
+              <label class="form-label" for="contact-subject" data-i18n="contact_form_subject">
+                Subject
+              </label>
+              <input type="text" id="contact-subject" name="subject" class="form-input"
+                data-i18n-ph="contact_ph_subject" placeholder="Project discussion…" required />
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label class="form-label" for="contact-message" data-i18n="contact_form_message">
+                Your Message
+              </label>
+              <textarea id="contact-message" name="message" rows="5" class="form-input resize-none"
+                data-i18n-ph="contact_ph_message" placeholder="Hello! I'd like to talk about…" required></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" id="submit-btn"
+              class="btn-primary w-full py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span id="submit-text" data-i18n="contact_form_send">Send Message</span>
+            </button>
+
+            <div id="turnstile-container" class="flex justify-center"></div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ================================================================
+  <!-- ================================================================
      FOOTER
 ================================================================ -->
-<footer class="border-t border-white/5 py-12 bg-dark-surface/50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col items-center gap-6">
+  <footer class="border-t border-white/5 py-12 bg-dark-surface/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center gap-6">
 
-      <!-- Logo -->
-      <a href="#home" class="flex items-center gap-2 group">
-        <img src="assets/img/logo-white.svg" alt="" aria-hidden="true" class="w-8 h-8 object-contain" />
-        <span class="font-semibold text-white" data-i18n="hero_name">Your Name</span>
-      </a>
-
-      <!-- Footer nav -->
-      <nav class="flex flex-wrap gap-4 sm:gap-6 justify-center" aria-label="Footer navigation">
-        <a href="#home"     class="text-sm text-gray-400 hover:text-white transition-colors" data-i18n="nav_home">Home</a>
-        <a href="#about"    class="text-sm text-gray-400 hover:text-white transition-colors" data-i18n="nav_about">About</a>
-        <a href="#skills"   class="text-sm text-gray-400 hover:text-white transition-colors" data-i18n="nav_skills">Skills</a>
-        <a href="#projects" class="text-sm text-gray-400 hover:text-white transition-colors" data-i18n="nav_projects">Projects</a>
-        <a href="#contact"  class="text-sm text-gray-400 hover:text-white transition-colors" data-i18n="nav_contact">Contact</a>
-      </nav>
-
-      <!-- Social -->
-      <div class="flex gap-3">
-        <a href="https://github.com/onurrs" target="_blank" rel="noopener noreferrer" class="social-icon-btn text-sm" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2 group">
+          <img src="assets/img/logo-white.svg" alt="" aria-hidden="true" class="w-8 h-8 object-contain" />
+          <span class="font-semibold text-white" data-i18n="hero_name">Your Name</span>
         </a>
-        <a href="https://www.linkedin.com/in/hacisogut" target="_blank" rel="noopener noreferrer" class="social-icon-btn text-sm" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
+
+        <!-- Footer nav -->
+        <nav class="flex flex-wrap gap-4 sm:gap-6 justify-center" aria-label="Footer navigation">
+          <a href="#home" class="text-sm text-gray-400 hover:text-white transition-colors" data-i18n="nav_home">Home</a>
+          <a href="#about" class="text-sm text-gray-400 hover:text-white transition-colors"
+            data-i18n="nav_about">About</a>
+          <a href="#skills" class="text-sm text-gray-400 hover:text-white transition-colors"
+            data-i18n="nav_skills">Skills</a>
+          <a href="#projects" class="text-sm text-gray-400 hover:text-white transition-colors"
+            data-i18n="nav_projects">Projects</a>
+          <a href="#contact" class="text-sm text-gray-400 hover:text-white transition-colors"
+            data-i18n="nav_contact">Contact</a>
+        </nav>
+
+        <!-- Social -->
+        <div class="flex gap-3">
+          <a href="https://github.com/onurrs" target="_blank" rel="noopener noreferrer" class="social-icon-btn text-sm"
+            aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/hacisogut" target="_blank" rel="noopener noreferrer"
+            class="social-icon-btn text-sm" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="text-gray-500 text-sm text-center">
+          <span data-i18n="footer_made">Made with</span>
+          <i class="fa-solid fa-heart text-rose-500 mx-1" aria-hidden="true"></i>
+          <span data-i18n="footer_by">by</span>
+          <span class="text-white font-medium ml-1" data-i18n="hero_name">Your Name</span>
+          &nbsp;&middot;&nbsp;
+          &copy;&nbsp;<span id="current-year">2026</span>
+          &nbsp;&middot;&nbsp;
+          <span data-i18n="footer_rights">All rights reserved.</span>
+        </p>
       </div>
-
-      <!-- Copyright -->
-      <p class="text-gray-500 text-sm text-center">
-        <span data-i18n="footer_made">Made with</span>
-        <i class="fa-solid fa-heart text-rose-500 mx-1" aria-hidden="true"></i>
-        <span data-i18n="footer_by">by</span>
-        <span class="text-white font-medium ml-1" data-i18n="hero_name">Your Name</span>
-        &nbsp;&middot;&nbsp;
-        &copy;&nbsp;<span id="current-year">2026</span>
-        &nbsp;&middot;&nbsp;
-        <span data-i18n="footer_rights">All rights reserved.</span>
-      </p>
     </div>
-  </div>
-</footer>
+  </footer>
 
 
-<!-- ================================================================
+  <!-- ================================================================
      BACK TO TOP
 ================================================================ -->
-<button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
-  <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
-</button>
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+  </button>
 
 
-<!-- ================================================================
+  <!-- ================================================================
      SCRIPTS  (order matters: translations → contact → app)
 ================================================================ -->
-<!-- Supabase JS v2 -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<!-- AOS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<!-- Typed.js -->
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-<!-- SweetAlert2 -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Supabase JS v2 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Typed.js -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<!-- Custom scripts -->
-<script src="assets/js/translations.js"></script>
-<script src="assets/js/contact.js"></script>
-<script src="assets/js/app.js"></script>
+  <!-- Custom scripts -->
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/contact.js"></script>
+  <script src="assets/js/app.js"></script>
 
 </body>
+
 </html>
