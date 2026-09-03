@@ -15,4 +15,4 @@ jobs:
         run: |
           curl -s -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
                -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
-               "https://yzydjjfxqdcjwljduqnx.supabase.co/rest/v1/contacts?select=id&limit=1" > /dev/null
+               "https://yzydjjfxqdcjwljduqnx.supabase.co/rest/v1/ping?select=id&limit=1" > /dev/null
