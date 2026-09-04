@@ -2,8 +2,8 @@ name: Supabase Keep Alive
 
 on:
   schedule:
-    # Her pazar ve carşamba gece 00:00 UTC'de çalışır
-    - cron: '0 0 * * 0,3'
+    # Her pazartesi ve perşembe gece 00:00 UTC'de çalışır
+    - cron: '0 0 * * 1,4'
   # Actions sekmesinden manuel tetiklemeye izin verir
   workflow_dispatch:
 
